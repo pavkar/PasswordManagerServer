@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="/logic.js"></script>
+</head>
+<body>
+Username
+<input type="text" id="username" name="name" required
+       minlength="4" maxlength="8" size="10">
+<br>
+Password
+<input type="text" id="passwod" name="name" required
+       minlength="4" maxlength="8" size="10">
+<br>
+
+<form onsubmit="return updateButton();">
+    <input class="favorite styled"
+           type="button"
+           value="Show manager">
+</form>
+<div id="manager" hidden="hidden">
+    <fieldset>
+        <input class="favorite styled"
+               type="button"
+               value="Save Password">
+        <br>
+        <input class="favorite styled"
+               type="button"
+               value="Delete Password Nr">
+        <br>
+        <input class="favorite styled"
+               type="button"
+               value="Get Password Nr">
+    </fieldset>
+
+</div>
+
+</body>
+</html>
