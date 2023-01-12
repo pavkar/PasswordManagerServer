@@ -1,6 +1,7 @@
 package ee.eid.service;
 
 import ee.eid.utility.CardCommunication;
+import ee.eid.utility.Convertor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -44,8 +45,8 @@ public class ReaderService {
     public ResponseAPDU transmit(CommandAPDU commandAPDU, APDUWrapper wrapper) throws CardServiceException {
         if (passportService.isOpen()) {
             ResponseAPDU responseAPDU = secureMessagingAPDUSender.transmit(wrapper, commandAPDU);
-
-            log.info("Response: " + Arrays.toString(responseAPDU.getBytes()));
+            log.info("Command: " + Convertor.convertByteToHex(commandAPDU.getBytes()));
+            log.info("Response: " + Convertor.convertByteToHex(responseAPDU.getBytes()));
 
             return responseAPDU;
         }
